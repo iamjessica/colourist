@@ -23,7 +23,7 @@ header {
  }
 
  nav {
- 	height: 40px;
+ 	height: 20px;
  }
 
  @media(min-width: 718px) {
