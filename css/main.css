@@ -27,11 +27,16 @@ header {
  	}
  }
 
+ul {
+	display: inline;
+}
+
 nav li {
 	list-style: none;
 	display: inline;
 	padding-left: 1.8em;
 }
+
  .current {
  	text-decoration: underline;
  }
