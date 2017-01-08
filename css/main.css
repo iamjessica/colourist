@@ -18,12 +18,7 @@ header {
 	text-align: center;
 	letter-spacing: .1em;
 	padding: .5em;
-	border: solid black .15em;
 	display: inline-block;
- }
-
- nav {
- 	height: 20px;
  }
 
  @media(min-width: 718px) {
