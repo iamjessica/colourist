@@ -50,7 +50,6 @@ nav li {
 }
 .gallery img {
 	padding: 1.5em;
-	width: 25%;
 	float: left;
 }
 
@@ -112,12 +111,35 @@ footer {
 	text-align: center;	
 }
 
-@media only screen 
-    and (min-device-width : 375px)
-    and (max-device-width : 667px)
-    and (-webkit-min-device-pixel-ratio : 2)
-{ 
-	.gallery img {
-		width: 50%%;
-	}
+@media only screen and (max-width : 480px) {
+   .gallery img{
+      width: 100%;
+   }
+   ul, li {
+   	display: block;
+   }
+}
+@media only screen and (max-width : 650px) and (min-width : 481px) {
+   .gallery img {
+      width: 50%;
+   }
+      ul, li {
+   	display: block;
+   }
+}
+@media only screen and (max-width : 1050px) and (min-width : 651px) {
+   .gallery img {
+      width: 33.3%;
+   }
+      ul, li {
+   	display: block;
+   }
+}
+@media only screen and (max-width : 1290px) and (min-width : 1051px) {
+   .gallery img {
+      width: 25%;
+   }
+         ul, li {
+   	display: inline;
+   }
 }
