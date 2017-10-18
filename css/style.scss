@@ -1,0 +1,194 @@
+@import "bourbon/bourbon";
+@import "neat/neat";
+@font-face {
+font-family: Athelas-Regular;
+src: ("fonts/Athelas-Regular.ttf");
+}
+@font-face {
+font-family: Courier-New;
+src: ("fonts/Cour.ttf");
+}
+
+/* =====================================
+Variables
+===================================== */
+$courier: Courier-New, courier, monospace;
+// Colours
+$black: #111;
+$white: #f4f4f4;
+
+// Media Queries
+$small: 576px;
+// Medium devices (tablets, 768px and up)
+$medium: 768px;
+
+/* =====================================
+Page Styles
+===================================== */
+
+
+body {
+background: $black;
+color: $white;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+max-width: 600px;
+margin: auto;
+}
+
+header {
+margin-top: 1.5rem;
+}
+
+section,
+footer {
+margin-top: 3rem;
+margin-bottom: 3rem;
+}
+
+header,
+section,
+footer {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  @media screen and (min-width: $small) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+a:link,
+a:visited {
+text-decoration: none;
+color: inherit;
+}
+
+html {font-size: 1em;}
+
+body {
+font-family: 'Athelas-Regular', georgia, serif;
+font-weight: 300;
+line-height: 1.5;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: lighter;
+  margin-top: 0;
+  font-style: italic;
+}
+h2 {
+  font-size: 1.2rem;
+  font-weight: lighter;
+  font-style: italic;
+  margin-top: 0;
+}
+
+/* =====================================
+Nav
+======================================== */
+nav {
+  display: flex;
+  justify-content: space-between;
+
+  #logo
+  h1 {
+    margin-bottom: 0;
+  }
+  p {
+    margin-top: .5rem;
+  }
+  a {
+    text-align: right;
+    font-style: normal;
+  }
+}
+
+/* =====================================
+Gallery
+======================================== */
+#work-history {
+  margin-top: 3rem;
+  .job {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-top: 1px solid $white;
+    .work-details {
+      text-align: right;
+  }
+}
+}
+p.date-full {
+  display: none;
+  @media screen and (min-width: $small) {
+    display: block;
+  }
+}
+  p.date {
+    display: block;
+    @media screen and (min-width: $small) {
+      display: none;
+    }
+}
+.work-title {
+  margin-right: 1.5rem;
+  @media screen and (min-width: $small) {
+    margin-right: 0;
+  }
+}
+.work-details {
+  font-family: $courier;
+}
+/* =====================================
+Gallery
+======================================== */
+
+#gallery {
+  @include grid-container;
+  width: 100%;
+  margin: 3rem 0;
+  padding: 3rem 0;
+  background: $white;
+  color: $black;
+  ul {
+    max-width: 960px;
+    margin: auto;
+  }
+  img {
+    vertical-align: bottom;
+    max-width: 100%;
+    margin-bottom: 20px;
+    transition: transform .8s;
+  }
+  img:hover {
+    transform: scale(1.1);
+  }
+  li {
+    @include grid-column(6);
+    @media screen and (min-width: $small) {
+      @include grid-column(3);
+    }
+    @media screen and (min-width: $medium) {
+      @include grid-column(3);
+    }
+  }
+}
+
+/* =====================================
+Footer
+======================================== */
+footer {
+  margin: 5rem 0;
+  a {
+    font-family: $courier;
+  }
+  .wrapper{
+  padding-top: 1.5rem;
+  border-top: 1px solid $white;
+}
+}

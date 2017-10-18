@@ -422,3 +422,19 @@ td,
 th {
   padding: 0;
 }
+
+/* =====================================
+Extended
+===================================== */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+ol, ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
