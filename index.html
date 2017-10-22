@@ -17,7 +17,7 @@
 				<h1>Jessica Graham</h1>
 				<p>Colourist</p>
 			</div>
-			<h2><a href="">Contact</a></h2>
+			<h2><a onclick="smoothScroll(document.getElementById('contact'));" href="#contact">Contact</a></h2>
 		</nav>
 	</header>
 
@@ -126,11 +126,35 @@
 		</ul>
 	</section>
 	<footer>
-		<div class="wrapper">
+		<div id="contact" class="wrapper">
 		<h2>Contact</h2>
 		<p><a href="mailto:hellojessicagraham@gmail.com?Subject=Colourist%20Enquiry" target="_top">hellojessicagraham@gmail.com</a></p>
 	</div>
 	</footer>
+<script>
+//Smooth scroll on navigation
+window.smoothScroll = function(target) {
+    var scrollContainer = target;
+    do { //find scroll container
+        scrollContainer = scrollContainer.parentNode;
+        if (!scrollContainer) return;
+        scrollContainer.scrollTop += 1;
+    } while (scrollContainer.scrollTop == 0);
 
+    var targetY = 0;
+    do { //find the top of target relatively to the container
+        if (target == scrollContainer) break;
+        targetY += target.offsetTop;
+    } while (target = target.offsetParent);
+
+    scroll = function(c, a, b, i) {
+        i++; if (i > 30) return;
+        c.scrollTop = a + (b - a) / 30 * i;
+        setTimeout(function(){ scroll(c, a, b, i); }, 10);
+    }
+    // start scrolling
+    scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+}
+</script>
 </body>
 </html>
