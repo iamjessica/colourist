@@ -11,10 +11,14 @@ Variables
 Page Styles
 ===================================== */
 body {
-  background: #111;
+  background-color: #111;
   color: #f4f4f4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+  @media print {
+    body {
+      background-color: #fff;
+      color: #000; } }
 
 .wrapper {
   max-width: 600px;
@@ -71,26 +75,41 @@ Nav
 nav {
   display: flex;
   justify-content: space-between; }
-  nav #logo
-  h1 {
+  nav #logo h1 {
     margin-bottom: 0; }
   nav p {
     margin-top: .5rem; }
-  nav a {
-    text-align: right;
-    font-style: normal; }
+  nav .contact-link {
+    text-align: right; }
+    nav .contact-link .email {
+      display: none; }
+      @media print {
+        nav .contact-link .email {
+          display: block; } }
+    nav .contact-link a {
+      text-align: right;
+      font-style: normal; }
 
 /* =====================================
 Work History
 ======================================== */
 #work-history {
   margin-top: 3rem; }
+  @media print {
+    #work-history {
+      margin-top: 1rem; } }
   #work-history .job {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem 0;
     border-top: 1px solid #f4f4f4; }
+    @media print {
+      #work-history .job {
+        padding: .5rem 0; } }
+    @media print {
+      #work-history .job {
+        border-top: 1px solid #000; } }
     #work-history .job .work-details {
       text-align: right; }
 
@@ -127,6 +146,9 @@ Gallery
     clear: both;
     content: "";
     display: block; }
+  @media print {
+    #gallery {
+      display: none; } }
   #gallery ul {
     max-width: 960px;
     margin: auto; }
@@ -159,10 +181,16 @@ Footer
 ======================================== */
 footer {
   margin: 5rem 0; }
+  @media print {
+    footer {
+      display: none; } }
   footer a {
     font-family: Courier-New, courier, monospace; }
   footer .wrapper {
     padding-top: 1.5rem;
     border-top: 1px solid #f4f4f4; }
+    @media print {
+      footer .wrapper {
+        border-top: 1px solid #000; } }
 
 /*# sourceMappingURL=style.css.map */

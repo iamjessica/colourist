@@ -28,10 +28,14 @@ Page Styles
 
 
 body {
-  background: $black;
+  background-color: $black;
   color: $white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @media print {
+    background-color: #fff;
+    color: #000;
+  }
 }
 
 .wrapper {
@@ -94,16 +98,25 @@ nav {
   display: flex;
   justify-content: space-between;
 
-  #logo
-  h1 {
+  #logo h1 {
     margin-bottom: 0;
   }
+
   p {
     margin-top: .5rem;
   }
-  a {
+  .contact-link{
     text-align: right;
-    font-style: normal;
+    .email {
+      display: none;
+      @media print {
+        display: block;
+      }
+    }
+    a {
+      text-align: right;
+      font-style: normal;
+    }
   }
 }
 
@@ -112,12 +125,21 @@ Work History
 ======================================== */
 #work-history {
   margin-top: 3rem;
+  @media print {
+    margin-top: 1rem;
+  }
   .job {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem 0;
+    @media print {
+      padding: .5rem 0;
+    }
     border-top: 1px solid $white;
+    @media print {
+      border-top: 1px solid #000;
+    }
     .work-details {
       text-align: right;
     }
@@ -154,6 +176,9 @@ Gallery
   padding: 3rem 0;
   background: $white;
   color: $black;
+  @media print{
+    display: none;
+  }
   ul {
     max-width: 960px;
     margin: auto;
@@ -191,11 +216,17 @@ Footer
 ======================================== */
 footer {
   margin: 5rem 0;
+  @media print {
+    display: none;
+  }
   a {
     font-family: $courier;
   }
   .wrapper{
     padding-top: 1.5rem;
     border-top: 1px solid $white;
+    @media print {
+      border-top: 1px solid #000;
+    }
   }
 }
