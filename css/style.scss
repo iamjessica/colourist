@@ -1,12 +1,13 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
+
 @font-face {
-  font-family: Athelas-Regular;
-  src: ("fonts/Athelas-Regular.ttf");
+  font-family: "Athelas-Regular";
+  src: url("fonts/Athelas-Regular.ttf");
 }
 @font-face {
-  font-family: Courier-New;
-  src: ("fonts/Cour.ttf");
+  font-family: "Courier-New";
+  src: url("fonts/Cour.ttf");
 }
 
 /* =====================================
